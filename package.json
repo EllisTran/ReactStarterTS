@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve --port 3000",
-    "build": "NODE_ENV=production webpack"
+    "build": "NODE_ENV=production webpack",
+    "lint": "eslint --ext .js,.ts,.jsx,.tsx src",
+    "format": "yarn run lint --fix & yarn prettier --write 'src/**/*.{js,jsx,ts,tsx}'"
   },
   "keywords": [],
   "author": "",
@@ -15,8 +17,12 @@
     "@types/react": "^18.0.26",
     "@types/react-dom": "^18.0.10",
     "css-loader": "^6.7.3",
+    "eslint": "^8.31.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-config-react-app": "^7.0.1",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.7.2",
+    "prettier": "^2.8.3",
     "ts-loader": "^9.4.2",
     "typescript": "^4.9.4",
     "webpack": "^5.75.0",
@@ -24,6 +30,7 @@
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
+    "axios": "^1.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   }
